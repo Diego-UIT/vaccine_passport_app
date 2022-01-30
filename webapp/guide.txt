@@ -1,0 +1,9 @@
+yarn create vite .
+yarn install
+yarn dev
+yarn add @mui/material @emotion/react @emotion/styled @mui/lab @mui/x-data-grid
+yarn add @fontsource/roboto
+yarn add @mui/icons-material
+yarn add react-chartjs-2 chart.js react-qr-code react-qr-reader
+yarn add axios moment query-string
+yarn add react-router-dom

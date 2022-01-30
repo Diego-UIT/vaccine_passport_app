@@ -1,0 +1,5 @@
+npx express-generator --no-view .
+npm install --global yarn
+yarn install
+yarn add cors crypto-js dotenv jsonwebtoken mongoose nodemon
+yarn start
