@@ -1,0 +1,1086 @@
+{
+	"info": {
+		"_postman_id": "26ab5907-f959-4169-b6ea-c62ebe8241b2",
+		"name": "vaccine-passport",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "admin login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"sdAWE@asd$\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/admin/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get summary data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0Mjc1MjYzN30.CGghgGJ3Y9nFGSHm5Zvu3QxjEYWI5z4iSQTudHcPDhw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/admin/summary",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"summary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjkyOTYwNn0.v3bCVmRAnyAe3HbfRoSOLMaFrYzyB9qpoPxsuWXdqws",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"sdAWE@asd$\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/admin/check-token",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"check-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjYwODQyNX0.vVtXax3Q3lGyUr8gdH4KAWp_B4SUNuylE57vaNtVnZI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\": \"0123456674\",\r\n    \"idNumber\": \"098765436756\",\r\n    \"fullName\": \"user 2\",\r\n    \"address\": \"address 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjYwOTc4NH0.idgdJrMj4ajJK4cYeoHfjSzpYQVMRiPrW0hgQ-J1juE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjYwNzQ4NX0.N_K2istLm9YUjUYCZM2AYWb92L7sBSj3rJmWBXuD7eo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\": \"012345678\",\r\n    \"idNumber\": \"0987654321\",\r\n    \"fullName\": \"user 1\",\r\n    \"address\": \"address 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/user/61fe3742f463d1bc861f9c80",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"61fe3742f463d1bc861f9c80"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjYwNzQ4NX0.N_K2istLm9YUjUYCZM2AYWb92L7sBSj3rJmWBXuD7eo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"user 1 updated\",\r\n    \"address\": \"address 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/user/61e8376918a5f889172e5a0a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"61e8376918a5f889172e5a0a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjYwNzQ4NX0.N_K2istLm9YUjUYCZM2AYWb92L7sBSj3rJmWBXuD7eo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/user/61e8376918a5f889172e5a0a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"61e8376918a5f889172e5a0a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vaccinated",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0Mzk2Nzc1NH0.HLZUJnho0x5snu5Bh2calhe3PNJaf5jX5Vp6IXe82Ig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"61f39d8280861330f1f40dbd\",\r\n    \"vaccineId\": \"61e972d0e6bed1c12c0d758f\",\r\n    \"vaccineLotId\": \"61fcd038d7e137e787034be3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/user/vaccinated",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"vaccinated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all place of user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0Mjc0NzQwNX0.8DTU9lH51eunY2h0InEFq84_9gSQcc42hoLXbPBzEVc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/user/61e8ebb6b37a0cb40a4730e9/place",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"61e8ebb6b37a0cb40a4730e9",
+								"place"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user check in place",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZmUzNzQyZjQ2M2QxYmM4NjFmOWM4MCIsImlhdCI6MTY0NDA1MDI0Mn0.Nyj8Iaik43jR91qdpmv3Rb1wR_UdIeIyuBzfyEtZqMw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"placeId\": \"61fe383729e967be436ad09d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/user/check-in-place",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"check-in-place"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all place user checked in",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0Mjc0NzQwNX0.8DTU9lH51eunY2h0InEFq84_9gSQcc42hoLXbPBzEVc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/user/61e8ebb6b37a0cb40a4730e9/place-visited",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"61e8ebb6b37a0cb40a4730e9",
+								"place-visited"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "place",
+			"item": [
+				{
+					"name": "create place",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZmUzNzQyZjQ2M2QxYmM4NjFmOWM4MCIsImlhdCI6MTY0NDA1MDI0Mn0.Nyj8Iaik43jR91qdpmv3Rb1wR_UdIeIyuBzfyEtZqMw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Cho Ray Hospital\",\r\n    \"address\": \"Ho Chi Minh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/place",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"place"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all place",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjYwOTc4NH0.idgdJrMj4ajJK4cYeoHfjSzpYQVMRiPrW0hgQ-J1juE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/place",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"place"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one place",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjYwOTc4NH0.idgdJrMj4ajJK4cYeoHfjSzpYQVMRiPrW0hgQ-J1juE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/place/61fe383729e967be436ad09d",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"place",
+								"61fe383729e967be436ad09d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update place",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZmUzNzQyZjQ2M2QxYmM4NjFmOWM4MCIsImlhdCI6MTY0NDA1MDI0Mn0.Nyj8Iaik43jR91qdpmv3Rb1wR_UdIeIyuBzfyEtZqMw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nhiet Doi Hospital\",\r\n    \"address\": \"Ha Noi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/place/61e8ebd3b37a0cb40a4730ed",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"place",
+								"61e8ebd3b37a0cb40a4730ed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete place",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZmUzNzQyZjQ2M2QxYmM4NjFmOWM4MCIsImlhdCI6MTY0NDA1MDI0Mn0.Nyj8Iaik43jR91qdpmv3Rb1wR_UdIeIyuBzfyEtZqMw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/place/61e8ebd3b37a0cb40a4730ed",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"place",
+								"61e8ebd3b37a0cb40a4730ed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vaccine",
+			"item": [
+				{
+					"name": "create vaccine",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjY2MTMzOX0.epXWO7P5WQG_3pK_ohHr5k913JhBIGTEP1IQ2-EPXvI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"AstraZeneca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/vaccine",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vaccine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all vaccine",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjYwNzQ4NX0.N_K2istLm9YUjUYCZM2AYWb92L7sBSj3rJmWBXuD7eo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"user 1 updated\",\r\n    \"address\": \"address 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/vaccine",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vaccine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one vaccine",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjY2NDEwOH0.0iCvBhugDNKFPluXQVZERJi994urRRmRg8PxnKpv7yI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/vaccine/61e905e6b4972a14a23158ee",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vaccine",
+								"61e905e6b4972a14a23158ee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update vaccine",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjY2MTMzOX0.epXWO7P5WQG_3pK_ohHr5k913JhBIGTEP1IQ2-EPXvI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Vaccine updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/vaccine/61e905e6b4972a14a23158ee",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vaccine",
+								"61e905e6b4972a14a23158ee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete vaccine",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjY2MTMzOX0.epXWO7P5WQG_3pK_ohHr5k913JhBIGTEP1IQ2-EPXvI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/vaccine/61e905e6b4972a14a23158ee",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vaccine",
+								"61e905e6b4972a14a23158ee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vaccine lot",
+			"item": [
+				{
+					"name": "create vaccine lot",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjY4MzI3MX0.B06XxRwDz9KnTDGvJTtRoEla9G-zJPYpFE3GW9GqeA4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"AstraZeneca\",\r\n    \"quantity\": 200000,\r\n    \"vaccineId\": \"61e914f878a46609e3593d02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/vaccine/lots",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vaccine",
+								"lots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all vaccine lot",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjY4MzI3MX0.B06XxRwDz9KnTDGvJTtRoEla9G-zJPYpFE3GW9GqeA4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/vaccine/lots/get-all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vaccine",
+								"lots",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one vaccine lot",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjY4MzI3MX0.B06XxRwDz9KnTDGvJTtRoEla9G-zJPYpFE3GW9GqeA4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Vaccine name\",\r\n    \"quantity\": 100000,\r\n    \"vaccineId\": \"61e914f878a46609e3593d02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/vaccine/lots/61e95bb8e3073f55a3178308",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vaccine",
+								"lots",
+								"61e95bb8e3073f55a3178308"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update vaccine lot",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjY4MzI3MX0.B06XxRwDz9KnTDGvJTtRoEla9G-zJPYpFE3GW9GqeA4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"AstraZeneca\",\r\n    \"quantity\": 200000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/vaccine/lots/61e95bb8e3073f55a3178308",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vaccine",
+								"lots",
+								"61e95bb8e3073f55a3178308"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete vaccine lot",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTgxZDIyOTZlZDlkYzI3NjMwNzc0NCIsImlhdCI6MTY0MjY4MzI3MX0.B06XxRwDz9KnTDGvJTtRoEla9G-zJPYpFE3GW9GqeA4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/vaccine/lots/61e95bb8e3073f55a3178308",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vaccine",
+								"lots",
+								"61e95bb8e3073f55a3178308"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

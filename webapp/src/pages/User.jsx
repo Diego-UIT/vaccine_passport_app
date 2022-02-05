@@ -22,7 +22,6 @@ const User = () => {
             try {
                 const response = await userApi.getAll()
                 setUserList(response)
-
             } catch(err) {
                 console.log(err)
             }

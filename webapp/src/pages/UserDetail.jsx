@@ -1,24 +1,25 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import userApi from '../api/userApi'
 import addressList from '../assets/dvhcvn.json'
-import { PageHeader, CustomDialog } from '../components'
+import { PageHeader, CustomDialog, UserVaccine } from '../components'
 import QRCode from 'react-qr-code'
 import { LoadingButton } from '@mui/lab'
 import { Grid, Stack, Card, CardContent, CardActions, Autocomplete, FormControl, TextField, Box, Typography, Button } from '@mui/material'
 
 const UserDetail = () => {
     const { id } = useParams()
+    const navigate = useNavigate()
     const [user, setUser] = useState()
     const [dialogOpen, setDialogOpen] = useState(false)
     const [dialogType, setDialogType] = useState('')
     const [dialogText, setDialogText] = useState('')
+    const [onDelete, setOnDelete] = useState(false)
 
     useEffect(() => {
         const getUser = async () => {
             try {
                 const res = await userApi.getOne(id)
-                console.log(res)
                 setUser(res)
             } catch(err) {
                 console.log(err)
@@ -41,25 +42,60 @@ const UserDetail = () => {
         setDialogOpen(true)
     }
 
+    const deleteUser = async () => {
+        if (onDelete) return
+        setOnDelete(true)
+
+        try {
+            await userApi.delete(id)
+            setOnDelete(false)
+            navigate('/user')
+        } catch(err) {
+            console.log(err)
+            setOnDelete(false)
+            setDialogText('Delete failed!')
+            setDialogType('error')
+            setDialogOpen(true)
+        }
+    }
+
     return (
         <>
-            <PageHeader title='User detail'/>
+            <PageHeader 
+                title='User detail'
+                rightContent={<LoadingButton
+                    variant='text'
+                    disableElevation
+                    color='error'
+                    loading={onDelete}
+                    onClick={deleteUser}
+                >
+                    Delete
+                </LoadingButton>}
+            />
             <Grid container spacing={4}>
                 <Grid item xs={8}>
                     <Stack spacing={4}>
                         {
                             user && <UserInfo 
-                                        user={user}
-                                        onUpdateFalse={onUpdateFalse}
-                                        onUpdateSuccess={onUpdateSuccess}
-                                    />
+                                user={user}
+                                onUpdateFalse={onUpdateFalse}
+                                onUpdateSuccess={onUpdateSuccess}
+                            />
+                        }
+                        {
+                            user && <UserVaccine user={user}/>
                         }
                     </Stack>
                 </Grid>
                 <Grid item xs={3}>
                     <Card elevation={0}>
                         <CardContent>
-                            <Box>
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}>
                                 {
                                     user && <QRCode
                                         id='qrCode'

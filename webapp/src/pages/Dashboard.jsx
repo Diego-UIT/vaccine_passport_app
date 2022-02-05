@@ -57,7 +57,7 @@ const Dashboard = () => {
                                 {
                                     summaryData && <SummaryInfo 
                                         title='User vaccinated'
-                                        number={summaryData.availableVaccine.toLocaleString('de-DE')}
+                                        number={summaryData.userVaccinated.toLocaleString('de-DE')}
                                         icon={<VerifiedUserOutlinedIcon 
                                             sx={{ fontSize: '3rem'}}
                                             color='success'
@@ -170,7 +170,6 @@ const SummaryInfo = ({title, number, icon}) => {
 }
 
 const VaccinatedChart = ({chartData}) => {
-    console.log(chartData)
     ChartJS.register(ArcElement, Tooltip, Legend)
 
     const data = {
